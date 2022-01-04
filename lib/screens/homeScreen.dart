@@ -1,3 +1,6 @@
+import 'package:chat_app/widgets/call.dart';
+import 'package:chat_app/widgets/recentChat.dart';
+import 'package:chat_app/widgets/status.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -63,15 +66,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
               labelPadding: EdgeInsets.only(bottom: 8.0),
-              unselectedLabelColor: Colors.black,
+              unselectedLabelColor: Colors.white54,
             ),
           ),
         ),
         body: TabBarView(
           children: <Widget>[
-            Text("CHATS"),
-            Text("STATUS"),
-            Text("CALLS"),
+            RecentChats(),
+            Status(),
+            Call(),
           ],
         ),
       ),
