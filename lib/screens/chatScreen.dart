@@ -157,7 +157,8 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70.0,
+        leadingWidth: 28.0,
+        toolbarHeight: 80.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
