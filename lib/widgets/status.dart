@@ -34,7 +34,7 @@ class _StatusState extends State<Status> {
                       margin: EdgeInsets.only(
                         top: 30.0,
                         bottom: 5.0,
-                        left: 45.0,
+                        left: 35.0,
                       ),
                       child: Icon(Icons.add)),
                 ),
@@ -78,13 +78,57 @@ class _StatusState extends State<Status> {
               ),
             ),
           ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: chats.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final Message chat = chats[index];
+                  return Container(
+                    margin: EdgeInsets.only(
+                      top: 3.0,
+                      bottom: 3.0,
+                      right: 10.0, /*left: 13.0*/
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      ),
+                    ),
+                    padding: EdgeInsets.only(
+                      left: 18.0,
+                      //right: 5.0,
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 30.0,
+                          backgroundImage: AssetImage(chat.sender.imageUrl),
+                        ),
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Text(
+                          chat.sender.name,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {},
         child: Icon(
-          Icons.message_sharp,
+          Icons.camera_enhance,
           color: Colors.white,
         ),
       ),
