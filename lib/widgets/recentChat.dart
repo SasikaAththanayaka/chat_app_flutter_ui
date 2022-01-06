@@ -20,6 +20,7 @@ class _RecentChatsState extends State<RecentChats> {
             topRight: Radius.circular(30.0),
           ),
           child: ListView.builder(
+              reverse: false,
               itemCount: chats.length,
               itemBuilder: (BuildContext context, int index) {
                 final Message chat = chats[index];

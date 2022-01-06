@@ -34,12 +34,47 @@ class _ChatScreenState extends State<ChatScreen> {
                 Expanded(
                   child: TextField(
                     textCapitalization: TextCapitalization.sentences,
-                    onChanged: (value) {
-                      setState(() {});
-                    },
+                    /* onChanged: (value) {
+                      setState(() {
+                        messages.add(
+                          Message(
+                            sender: james,
+                            time: '5:30 PM',
+                            text: value,
+                            isLiked: true,
+                            unread: true,
+                          ),
+                          /*currentUser,
+                          "5:30 PM",
+                          "Just walked my doge. She was super duper cute. The best pupper!!",
+                          false,
+                          true,*/
+                        );
+                      });
+                    },*/
                     decoration: InputDecoration.collapsed(
+                      //enabled: false,
+
                       hintText: "Message",
                     ),
+                    onSubmitted: (value) {
+                      setState(() {
+                        messages.add(
+                          Message(
+                            sender: james,
+                            time: "6.00PM",
+                            text: value,
+                            isLiked: true,
+                            unread: true,
+                          ),
+                          /*currentUser,
+                          "5:30 PM",
+                          "Just walked my doge. She was super duper cute. The best pupper!!",
+                          false,
+                          true,*/
+                        );
+                      });
+                    },
                   ),
                 ),
                 IconButton(
@@ -203,24 +238,29 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              child: ListView.builder(
-                reverse: true,
-                padding: EdgeInsets.only(top: 15.0),
-                itemCount: messages.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final Message message = messages[index];
-                  final bool isMe = message.sender.id == currentUser.id;
-                  return _buildMessege(message, isMe);
-                },
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                child: ClipRRect(
+                  child: ListView.builder(
+                    reverse: true,
+                    padding: EdgeInsets.only(top: 15.0),
+                    itemCount: messages.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      final Message message = messages[index];
+                      final bool isMe = message.sender.id == currentUser.id;
+                      return _buildMessege(message, isMe);
+                    },
+                  ),
+                ),
               ),
             ),
-          ),
-          _buildMessegeComposer(),
-        ],
+            _buildMessegeComposer(),
+          ],
+        ),
       ),
     );
   }
