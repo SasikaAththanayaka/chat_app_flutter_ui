@@ -109,13 +109,28 @@ class _StatusState extends State<Status> {
                         SizedBox(
                           width: 15.0,
                         ),
-                        Text(
-                          chat.sender.name,
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              chat.sender.name,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10.0,
+                            ),
+                            Text(
+                              chat.time,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

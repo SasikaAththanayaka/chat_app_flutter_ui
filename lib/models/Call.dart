@@ -21,19 +21,58 @@ List<Call> calls = [
   Call(
     john,
     "1:00 PM",
-    Icon(Icons.phone_callback),
-    Icon(Icons.call),
+    Icon(
+      Icons.call_received,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.call,
+      color: Colors.green,
+    ),
   ),
   Call(
     olivia,
     "1:30 PM",
-    Icon(Icons.call_received),
-    Icon(Icons.video_call),
+    Icon(
+      Icons.call_received,
+      color: Colors.red,
+    ),
+    Icon(Icons.video_call, color: Colors.blue),
   ),
   Call(
     steven,
     "2:00 PM",
-    Icon(Icons.call_missed),
-    Icon(Icons.call),
+    Icon(
+      Icons.call_made,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.call,
+      color: Colors.blue,
+    ),
+  ),
+  Call(
+    sam,
+    "2:00 PM",
+    Icon(
+      Icons.call_made,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.call_received,
+      color: Colors.blue,
+    ),
+  ),
+  Call(
+    sophia,
+    "2:00 PM",
+    Icon(
+      Icons.call_received,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.call,
+      color: Colors.blue,
+    ),
   ),
 ];

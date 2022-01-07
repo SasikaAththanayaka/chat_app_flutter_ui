@@ -36,38 +36,35 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {},
             ),
           ],
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(50.0),
-            child: TabBar(
-              tabs: <Widget>[
-                Text(
-                  "CHATS",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
-                  ),
+          bottom: TabBar(
+            tabs: <Widget>[
+              Text(
+                "CHATS",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15.0,
                 ),
-                Text(
-                  "STATUS",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
-                  ),
+              ),
+              Text(
+                "STATUS",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15.0,
                 ),
-                Text(
-                  "CALLS",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
-                  ),
+              ),
+              Text(
+                "CALLS",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15.0,
                 ),
-              ],
-              labelPadding: EdgeInsets.only(bottom: 8.0),
-              unselectedLabelColor: Colors.white54,
-            ),
+              ),
+            ],
+            labelPadding: EdgeInsets.only(bottom: 8.0),
+            unselectedLabelColor: Colors.red,
           ),
         ),
         body: TabBarView(
