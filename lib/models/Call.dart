@@ -27,7 +27,7 @@ List<Call> calls = [
     ),
     Icon(
       Icons.call,
-      color: Colors.green,
+      color: Colors.blue,
     ),
   ),
   Call(
@@ -59,7 +59,7 @@ List<Call> calls = [
       color: Colors.green,
     ),
     Icon(
-      Icons.call_received,
+      Icons.video_call,
       color: Colors.blue,
     ),
   ),
